@@ -1,453 +1,189 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+
 function Navbar() {
-  const [isLearnDropdownOpen, setisLearnDropdownOpen] = useState(false)
+  // State to control dropdown visibility
+  const [isCoursesOpen, setCoursesOpen] = useState(false);
+  const [isPayOnlineOpen, setPayOnlineOpen] = useState(false);
+  const [isScholarshipOpen, setScholarshipOpen] = useState(false);
+  const [isDownloadsOpen, setDownloadsOpen] = useState(false);
+
+  const courseCategories = [
+    { id: 1, type: "NEET Courses" },
+    { id: 2, type: "JEE Courses" },
+    { id: 3, type: "Foundation Courses" },
+  ];
 
   return (
-    <>
-      <nav className="bg-[#f3ecec] shadow-md sticky top-0 w-full z-40">
-        <div className="container mx-auto px-6 py-3 flex justify-between items-center">
-          {/* Logo Section */}
-          <div className="flex items-center">
-            <a to="/">
-              <h1 className="text-2xl font-bold text-gray-800 mr-5">HELIX-HOME</h1>
-            </a>
+    <nav className="bg-white shadow-md sticky top-0 w-full z-50">
+      <div className="container mx-auto px-6 py-3 flex justify-between items-center relative">
+        {/* Logo Section */}
+        <div className="flex items-center">
+          <Link to="/" className="text-2xl font-bold text-gray-800 mr-5">
+            HELIX
+          </Link>
 
-            {/* Navigation as */}
-            <div className="hidden md:flex space-x-9 items-center">
-              <button
-                onClick={() => {
-                  setisLearnDropdownOpen(!isLearnDropdownOpen)
-                }}
-                className="text-black font-semibold"
-              >
-                Learn{' '}
-                <span className="text-sm">
-                  {isLearnDropdownOpen ? '▲' : '▼'}
-                </span>
-              </button>
-              <a to="/catalog" className="text-black font-semibold">
-                Catalog
-              </a>
-              <a to="/business" className="text-black font-semibold">
-                Business <span className="text-sm">▼</span>
-              </a>
-              <a to="/government" className="text-black font-semibold">
-                Government
-              </a>
-              <a to="/outcomes" className="text-black font-semibold">
-                Outcomes
-              </a>
-            </div>
-          </div>
+          {/* Navigation Links */}
+          <div className="hidden md:flex space-x-9 items-center">
+            <Link
+              to="/"
+              className="text-black hover:bg-[#F1EFFF] hover:scale-110 transition-all duration-200 cursor-pointer flex items-center h-[40px] font-semibold"
+            >
+              Home
+            </Link>
+            <Link
+              to="/director-desk"
+              className="text-black hover:bg-[#F1EFFF] hover:scale-110 transition-all duration-200 cursor-pointer flex items-center h-[40px] font-semibold"
+            >
+              Director's Desk
+            </Link>
 
-          {/* Search and Buttons */}
-          <div className="flex items-center space-x-4">
-            <button className="text-black font-semibold">
-              Search
-            </button>
-            <a
-              to="/login"
-              className="text-blue-600 border border-blue-600 rounded px-4 py-2 hover:bg-blue-600 hover:text-white"
-            >
-              Log In
-            </a>
-            <a
-              to="/join"
-              className="bg-blue-600 text-white rounded px-4 py-2 hover:bg-blue-700"
-            >
-              Join for Free
-            </a>
-          </div>
-        </div>
-      </nav>
-      {isLearnDropdownOpen && (
-        <div className="learn-dropdown fixed top-16 left-20 bg-white shadow-lg rounded p-4 w-[90vw] z-50">
-          <div className="relative">
+            {/* Courses Dropdown */}
             <div
-              className="absolute -top-6 left-10 w-6 h-6 bg-white rotate-45 transform -translate-y-1/2"
-              style={{ boxShadow: '-1px -1px 0px 0 rgba(0,0,0,0.1)' }}
-            ></div>
-            <div className="mt-2 px-16">
-              <nav className="flex justify-between">
-                <ul>
-                  <li className="font-bold my-4">Schools</li>
-                  <ul className="flex flex-col gap-4">
-                    <li>
-                      <a
-                        href="https://www.udacity.com/school/artificial-intelligence"
-                        className="flex items-center space-x-2 hover:underline"
-                      >
-                        <img
-                          src="https://uds-assets.udacity.com/glyphs/v2/school-ai-one.svg"
-                          className="w-8 h-8"
-                          alt="AI"
-                        />
-                        <span>Artificial Intelligence</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.udacity.com/school/artificial-intelligence"
-                        className="flex items-center space-x-2 hover:underline"
-                      >
-                        <img
-                          src="https://uds-assets.udacity.com/glyphs/v2/school-ai-one.svg"
-                          className="w-8 h-8"
-                          alt="AI"
-                        />
-                        <span>Artificial Intelligence</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.udacity.com/school/artificial-intelligence"
-                        className="flex items-center space-x-2 hover:underline"
-                      >
-                        <img
-                          src="https://uds-assets.udacity.com/glyphs/v2/school-ai-one.svg"
-                          className="w-8 h-8"
-                          alt="AI"
-                        />
-                        <span>Artificial Intelligence</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.udacity.com/school/artificial-intelligence"
-                        className="flex items-center space-x-2 hover:underline"
-                      >
-                        <img
-                          src="https://uds-assets.udacity.com/glyphs/v2/school-ai-one.svg"
-                          className="w-8 h-8"
-                          alt="AI"
-                        />
-                        <span>Artificial Intelligence</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.udacity.com/school/artificial-intelligence"
-                        className="flex items-center space-x-2 hover:underline"
-                      >
-                        <img
-                          src="https://uds-assets.udacity.com/glyphs/v2/school-ai-one.svg"
-                          className="w-8 h-8"
-                          alt="AI"
-                        />
-                        <span>Artificial Intelligence</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.udacity.com/school/artificial-intelligence"
-                        className="flex items-center space-x-2 hover:underline"
-                      >
-                        <img
-                          src="https://uds-assets.udacity.com/glyphs/v2/school-ai-one.svg"
-                          className="w-8 h-8"
-                          alt="AI"
-                        />
-                        <span>Artificial Intelligence</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.udacity.com/school/artificial-intelligence"
-                        className="flex items-center space-x-2 hover:underline"
-                      >
-                        <img
-                          src="https://uds-assets.udacity.com/glyphs/v2/school-ai-one.svg"
-                          className="w-8 h-8"
-                          alt="AI"
-                        />
-                        <span>Artificial Intelligence</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.udacity.com/school/artificial-intelligence"
-                        className="flex items-center space-x-2 hover:underline"
-                      >
-                        <img
-                          src="https://uds-assets.udacity.com/glyphs/v2/school-ai-one.svg"
-                          className="w-8 h-8"
-                          alt="AI"
-                        />
-                        <span>Artificial Intelligence</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.udacity.com/school/artificial-intelligence"
-                        className="flex items-center space-x-2 hover:underline"
-                      >
-                        <img
-                          src="https://uds-assets.udacity.com/glyphs/v2/school-ai-one.svg"
-                          className="w-8 h-8"
-                          alt="AI"
-                        />
-                        <span>Artificial Intelligence</span>
-                      </a>
-                    </li>
-
-                    {/* Add other list items similarly */}
-                  </ul>
-                </ul>
-                <ul>
-                  <li className="font-bold my-4">Schools</li>
-                  <ul className="flex flex-col gap-4">
-                    <li>
-                      <a
-                        href="https://www.udacity.com/school/artificial-intelligence"
-                        className="flex items-center space-x-2 hover:underline"
-                      >
-                        <img
-                          src="https://uds-assets.udacity.com/glyphs/v2/school-ai-one.svg"
-                          className="w-8 h-8"
-                          alt="AI"
-                        />
-                        <span>Artificial Intelligence</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.udacity.com/school/artificial-intelligence"
-                        className="flex items-center space-x-2 hover:underline"
-                      >
-                        <img
-                          src="https://uds-assets.udacity.com/glyphs/v2/school-ai-one.svg"
-                          className="w-8 h-8"
-                          alt="AI"
-                        />
-                        <span>Artificial Intelligence</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.udacity.com/school/artificial-intelligence"
-                        className="flex items-center space-x-2 hover:underline"
-                      >
-                        <img
-                          src="https://uds-assets.udacity.com/glyphs/v2/school-ai-one.svg"
-                          className="w-8 h-8"
-                          alt="AI"
-                        />
-                        <span>Artificial Intelligence</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.udacity.com/school/artificial-intelligence"
-                        className="flex items-center space-x-2 hover:underline"
-                      >
-                        <img
-                          src="https://uds-assets.udacity.com/glyphs/v2/school-ai-one.svg"
-                          className="w-8 h-8"
-                          alt="AI"
-                        />
-                        <span>Artificial Intelligence</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.udacity.com/school/artificial-intelligence"
-                        className="flex items-center space-x-2 hover:underline"
-                      >
-                        <img
-                          src="https://uds-assets.udacity.com/glyphs/v2/school-ai-one.svg"
-                          className="w-8 h-8"
-                          alt="AI"
-                        />
-                        <span>Artificial Intelligence</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.udacity.com/school/artificial-intelligence"
-                        className="flex items-center space-x-2 hover:underline"
-                      >
-                        <img
-                          src="https://uds-assets.udacity.com/glyphs/v2/school-ai-one.svg"
-                          className="w-8 h-8"
-                          alt="AI"
-                        />
-                        <span>Artificial Intelligence</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.udacity.com/school/artificial-intelligence"
-                        className="flex items-center space-x-2 hover:underline"
-                      >
-                        <img
-                          src="https://uds-assets.udacity.com/glyphs/v2/school-ai-one.svg"
-                          className="w-8 h-8"
-                          alt="AI"
-                        />
-                        <span>Artificial Intelligence</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.udacity.com/school/artificial-intelligence"
-                        className="flex items-center space-x-2 hover:underline"
-                      >
-                        <img
-                          src="https://uds-assets.udacity.com/glyphs/v2/school-ai-one.svg"
-                          className="w-8 h-8"
-                          alt="AI"
-                        />
-                        <span>Artificial Intelligence</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.udacity.com/school/artificial-intelligence"
-                        className="flex items-center space-x-2 hover:underline"
-                      >
-                        <img
-                          src="https://uds-assets.udacity.com/glyphs/v2/school-ai-one.svg"
-                          className="w-8 h-8"
-                          alt="AI"
-                        />
-                        <span>Artificial Intelligence</span>
-                      </a>
-                    </li>
-
-                    {/* Add other list items similarly */}
-                  </ul>
-                </ul>
-                <ul>
-                  <li className="font-bold my-4">Schools</li>
-                  <ul className="flex flex-col gap-4">
-                    <li>
-                      <a
-                        href="https://www.udacity.com/school/artificial-intelligence"
-                        className="flex items-center space-x-2 hover:underline"
-                      >
-                        <img
-                          src="https://uds-assets.udacity.com/glyphs/v2/school-ai-one.svg"
-                          className="w-8 h-8"
-                          alt="AI"
-                        />
-                        <span>Artificial Intelligence</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.udacity.com/school/artificial-intelligence"
-                        className="flex items-center space-x-2 hover:underline"
-                      >
-                        <img
-                          src="https://uds-assets.udacity.com/glyphs/v2/school-ai-one.svg"
-                          className="w-8 h-8"
-                          alt="AI"
-                        />
-                        <span>Artificial Intelligence</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.udacity.com/school/artificial-intelligence"
-                        className="flex items-center space-x-2 hover:underline"
-                      >
-                        <img
-                          src="https://uds-assets.udacity.com/glyphs/v2/school-ai-one.svg"
-                          className="w-8 h-8"
-                          alt="AI"
-                        />
-                        <span>Artificial Intelligence</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.udacity.com/school/artificial-intelligence"
-                        className="flex items-center space-x-2 hover:underline"
-                      >
-                        <img
-                          src="https://uds-assets.udacity.com/glyphs/v2/school-ai-one.svg"
-                          className="w-8 h-8"
-                          alt="AI"
-                        />
-                        <span>Artificial Intelligence</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.udacity.com/school/artificial-intelligence"
-                        className="flex items-center space-x-2 hover:underline"
-                      >
-                        <img
-                          src="https://uds-assets.udacity.com/glyphs/v2/school-ai-one.svg"
-                          className="w-8 h-8"
-                          alt="AI"
-                        />
-                        <span>Artificial Intelligence</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.udacity.com/school/artificial-intelligence"
-                        className="flex items-center space-x-2 hover:underline"
-                      >
-                        <img
-                          src="https://uds-assets.udacity.com/glyphs/v2/school-ai-one.svg"
-                          className="w-8 h-8"
-                          alt="AI"
-                        />
-                        <span>Artificial Intelligence</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.udacity.com/school/artificial-intelligence"
-                        className="flex items-center space-x-2 hover:underline"
-                      >
-                        <img
-                          src="https://uds-assets.udacity.com/glyphs/v2/school-ai-one.svg"
-                          className="w-8 h-8"
-                          alt="AI"
-                        />
-                        <span>Artificial Intelligence</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.udacity.com/school/artificial-intelligence"
-                        className="flex items-center space-x-2 hover:underline"
-                      >
-                        <img
-                          src="https://uds-assets.udacity.com/glyphs/v2/school-ai-one.svg"
-                          className="w-8 h-8"
-                          alt="AI"
-                        />
-                        <span>Artificial Intelligence</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.udacity.com/school/artificial-intelligence"
-                        className="flex items-center space-x-2 hover:underline"
-                      >
-                        <img
-                          src="https://uds-assets.udacity.com/glyphs/v2/school-ai-one.svg"
-                          className="w-8 h-8"
-                          alt="AI"
-                        />
-                        <span>Artificial Intelligence</span>
-                      </a>
-                    </li>
-
-                    {/* Add other list items similarly */}
-                  </ul>
-                </ul>
-              </nav>
+              className="relative group"
+              onMouseEnter={() => setCoursesOpen(true)}
+              onMouseLeave={() => setCoursesOpen(false)}
+            >
+              <div className="text-black hover:bg-[#F1EFFF] hover:scale-110 transition-all duration-200 cursor-pointer flex items-center h-[40px] font-semibold">
+                Courses
+              </div>
+              {isCoursesOpen && (
+               <div className="absolute left-0 top-full mt-0 w-48 bg-white shadow-md rounded-md z-50">
+                  {courseCategories.map((category) => (
+                    <Link
+                      key={category.id}
+                      to={`/category/${category.id}`} // Dynamically route based on categoryId
+                      className="block px-4 py-2 text-black hover:bg-[#F1EFFF]"
+                    >
+                      {category.type}
+                    </Link>
+                  ))}
+                </div>
+              )}
             </div>
+
+            {/* Pay Online Dropdown */}
+            <div
+              className="relative group"
+              onMouseEnter={() => setPayOnlineOpen(true)}
+              onMouseLeave={() => setPayOnlineOpen(false)}
+            >
+              <div className="text-black hover:bg-[#F1EFFF] hover:scale-110 transition-all duration-200 cursor-pointer flex items-center h-[40px] font-semibold">
+                Pay Online
+              </div>
+              {isPayOnlineOpen && (
+                <div className="absolute left-0 top-full mt-0 w-48 bg-white shadow-md rounded-md z-50">
+                  <Link
+                    to="/pay-online-method-1"
+                    className="block px-4 py-2 text-black hover:bg-[#F1EFFF]"
+                  >
+                    NEET Courses
+                  </Link>
+                  <Link
+                    to="/pay-online-method-2"
+                    className="block px-4 py-2 text-black hover:bg-[#F1EFFF]"
+                  >
+                    JEE Courses
+                  </Link>
+                  <Link
+                    to="/pay-online-method-3"
+                    className="block px-4 py-2 text-black hover:bg-[#F1EFFF]"
+                  >
+                    Foundation Courses
+                  </Link>
+                </div>
+              )}
+            </div>
+
+            {/* Scholarship Dropdown */}
+            <div
+              className="relative group"
+              onMouseEnter={() => setScholarshipOpen(true)}
+              onMouseLeave={() => setScholarshipOpen(false)}
+            >
+              <div className="text-black hover:bg-[#F1EFFF] hover:scale-110 transition-all duration-200 cursor-pointer flex items-center h-[40px] font-semibold">
+                Scholarship
+              </div>
+              {isScholarshipOpen && (
+                <div className="absolute left-0 top-full mt-0 w-48 bg-white shadow-md rounded-md z-50">
+                  <Link
+                    to="/scholarship-1"
+                    className="block px-4 py-2 text-black hover:bg-[#F1EFFF]"
+                  >
+                    Apply for Scholarship Test
+                  </Link>
+                  <a
+                    href="https://www.helixinstitute.com/HSAT/index.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block px-4 py-2 text-black hover:bg-[#F1EFFF]"
+                  >
+                    About Scholarship Test
+                  </a>
+                </div>
+              )}
+            </div>
+
+            {/* Downloads Dropdown */}
+            <div
+              className="relative group"
+              onMouseEnter={() => setDownloadsOpen(true)}
+              onMouseLeave={() => setDownloadsOpen(false)}
+            >
+              <div className="text-black hover:bg-[#F1EFFF] hover:scale-110 transition-all duration-200 cursor-pointer flex items-center h-[40px] font-semibold">
+                Downloads
+              </div>
+              {isDownloadsOpen && (
+                <div className="absolute left-0 top-full mt-0 w-48 bg-white shadow-md rounded-md z-50">
+                  <Link
+                    to="/download-1"
+                    className="block px-4 py-2 text-black hover:bg-[#F1EFFF]"
+                  >
+                    Download 1
+                  </Link>
+                  <Link
+                    to="/download-2"
+                    className="block px-4 py-2 text-black hover:bg-[#F1EFFF]"
+                  >
+                    Download 2
+                  </Link>
+                </div>
+              )}
+            </div>
+
+            <Link
+              to="/jobs"
+              className="text-black hover:scale-110 hover:bg-[#F1EFFF] transition-all duration-200 cursor-pointer flex items-center h-[40px] font-semibold"
+            >
+              Jobs
+            </Link>
+            <Link
+              to="/contact-us"
+              className="text-black hover:scale-110 hover:bg-[#F1EFFF] transition-all duration-200 cursor-pointer flex items-center h-[40px] font-semibold"
+            >
+              Contact Us
+            </Link>
           </div>
         </div>
-      )}
-    </>
-  )
+
+        {/* Search and Buttons */}
+        <div className="flex items-center space-x-4">
+          <Link
+            to="/login"
+            className="text-blue-600 border border-blue-600 rounded px-4 py-2 hover:bg-blue-600 hover:text-white"
+          >
+            Log In
+          </Link>
+          <Link
+            to="/join"
+            className="bg-blue-600 text-white rounded px-4 py-2 hover:bg-blue-700"
+          >
+            Sign Up
+          </Link>
+        </div>
+      </div>
+    </nav>
+  );
 }
 
-export default Navbar
+export default Navbar;

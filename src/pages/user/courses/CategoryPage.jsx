@@ -66,8 +66,8 @@
 
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { courseCategories } from "../data/courses";
-import bgImage from "../assets/bgImage.jpg";
+import { courseCategories } from '../../../data/courses'
+import bgImage from '../../../assets/bgImage.jpg'
 
 function CategoryPage() {
   const { categoryId } = useParams(); // Get the categoryId from the URL

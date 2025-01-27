@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FiBookOpen } from "react-icons/fi";
-import { courseCategories } from "../../data/courses";
+import { courseCategories } from "../../../data/courses";
 import { useNavigate } from "react-router-dom";
 
 function ClassRoomCourses() {

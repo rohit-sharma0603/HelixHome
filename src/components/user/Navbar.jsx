@@ -74,7 +74,7 @@ function Navbar() {
               {isPayOnlineOpen && (
                 <div className="absolute left-0 top-full mt-0 w-48 bg-white shadow-md rounded-md z-50">
                   <Link
-                    to="/pay-online-method-1"
+                    to="/pay-online"
                     className="block px-4 py-2 text-black hover:bg-[#F1EFFF]"
                   >
                     NEET Courses
@@ -107,7 +107,7 @@ function Navbar() {
               {isScholarshipOpen && (
                 <div className="absolute left-0 top-full mt-0 w-48 bg-white shadow-md rounded-md z-50">
                   <Link
-                    to="/scholarship-1"
+                    to="/scholarship-test"
                     className="block px-4 py-2 text-black hover:bg-[#F1EFFF]"
                   >
                     Apply for Scholarship Test
@@ -136,16 +136,16 @@ function Navbar() {
               {isDownloadsOpen && (
                 <div className="absolute left-0 top-full mt-0 w-48 bg-white shadow-md rounded-md z-50">
                   <Link
-                    to="/download-1"
+                    to="/download-syllabus"
                     className="block px-4 py-2 text-black hover:bg-[#F1EFFF]"
                   >
-                    Download 1
+                    Download Syllabus
                   </Link>
                   <Link
-                    to="/download-2"
+                    to="/neet-answer-key"
                     className="block px-4 py-2 text-black hover:bg-[#F1EFFF]"
                   >
-                    Download 2
+                  NEET Answer Key
                   </Link>
                 </div>
               )}

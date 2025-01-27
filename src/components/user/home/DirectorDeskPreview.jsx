@@ -48,7 +48,7 @@
 
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import directorImage from "../../assets/directorImage.jpg";
+import directorImage from "../../../assets/directorImage.jpg";
 
 function DirectorsDeskPreview() {
   const navigate = useNavigate();

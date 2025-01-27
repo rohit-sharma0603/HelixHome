@@ -60,7 +60,7 @@
 
 
 import React from "react";
-import SailentImage from "../../assets/sailent.jpg";
+import SailentImage from "../../../assets/sailent.jpg";
 
 const SalientFeatures = () => {
   const features = [

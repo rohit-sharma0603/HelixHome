@@ -1,5 +1,5 @@
 import React from 'react'
-import DirectorDesk from '../components/director/DirectorDesk';
+import DirectorDesk from '../../components/user/director/DirectorDesk';
 
 
 const DirectorDeskPage = () => {

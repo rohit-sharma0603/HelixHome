@@ -80,6 +80,9 @@ import AdminDashboardPage from '../pages/admin/AdminDashboardPage';
 import EditCoursesPage from '../pages/admin/EditCoursesPage';
 import { TestimonialsPanelPage } from '../pages/admin/TestimonialsPanelPage';
 import { SliderImagePage } from '../pages/admin/SliderImagePage';
+import SyllabusUplaodPage from '../pages/admin/SyllabusUplaodPage';
+import ScholarshipTestFormPage from '../pages/admin/ScholarShipTestFromPage';
+import DirectorDeskEditForm from '../pages/admin/DirectorDeskEditPage';
 
 const AdminRoutes = () => {
   return (
@@ -102,6 +105,9 @@ const AdminRoutes = () => {
         <Route path="/edit-courses" element={isAuthenticated() ? <EditCoursesPage /> : <Navigate to="/admin/login" />} />
         <Route path="/home-testimonials" element={isAuthenticated() ? <TestimonialsPanelPage /> : <Navigate to="/admin/login" />} />
         <Route path="/home-sliderImage" element={isAuthenticated() ? <SliderImagePage /> : <Navigate to="/admin/login" />} />
+        <Route path="/syllabusUpload" element={isAuthenticated() ? <SyllabusUplaodPage/> : <Navigate to="/admin/login" />} />
+        <Route path="/scholasrhipTests-from" element={isAuthenticated() ? <ScholarshipTestFormPage/> : <Navigate to="/admin/login" />} />
+        <Route path="/directorDesk-edit" element={isAuthenticated() ? <DirectorDeskEditForm/> : <Navigate to="/admin/login" />} />    
         {/* Add more admin routes here */}
       </Route>
     </Routes>

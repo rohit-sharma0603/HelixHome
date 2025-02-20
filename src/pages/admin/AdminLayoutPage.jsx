@@ -121,7 +121,7 @@ const AdminLayout = () => {
           </Link>
 
           <Link to="/admin/edit-courses" className="flex items-center gap-4 text-lg hover:text-gray-300">
-            <FaCog size={20} />
+            <FaCog size={20} className='animate-spin [animation-duration:2.5s]'/>
             {isSidebarOpen && <span>Edit Courses</span>}
           </Link>
           <Link to="/admin/scholasrhipTests-from" className="flex items-center gap-4 text-lg hover:text-gray-300">

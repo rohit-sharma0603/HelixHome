@@ -355,7 +355,7 @@ const TestimonialsPanel = () => {
             placeholder="Enter role"
           />
         </div>
-        <div className="mb-4">
+        <div className="mb-4">qnp
           <label className="block text-lg font-medium">Title</label>
           <input
             type="text"
